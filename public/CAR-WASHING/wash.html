@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Washing Services - OZZO</title>
+  <link rel="stylesheet" href="wash.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+
+      <!-- Menu icon (left on mobile) -->
+      <div class="menu-icon" id="menuToggle" onclick="toggleMenu()">☰</div>
+
+      <!-- Logo and site name (right on mobile) -->
+      <a href="../index.html" class="logo-link">
+        <div class="logo-left">
+          <img
+            src="../logo.jpeg"
+            alt="Logo">
+          <span class="site-name">
+            <span class="blink">OZZO</span>
+            
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation links -->
+      <nav class="nav-links" id="mobileMenu">
+        <a href="../index.html">Home</a>
+        <a href="../OUR-SERVICES/services.html" class="active">Services</a>
+        <a href="../FRANCHIES/Franchise.html">Franchise</a>
+        <a href="../CONTACT US/contact.html">Contact</a>
+        <a href="../ABOUT US/about.html">About</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <section id="Car Washing Services">
+    <div class="container">
+
+      <h2 class="service-heading">Car Washing Services</h2>
+      <p class="service-content">At OZZO, we bring top-quality car cleaning right to your doorstep. Our Car
+        Washing Services are designed to give your vehicle a spotless, showroom-ready finish using eco-friendly
+        products, professional tools, and a trained team committed to excellence.</p>
+
+      <!-- Main Image -->
+      <div class="carousel">
+        <img src="wash1.jpeg" class="active" />
+        <img src="wash2.jpeg" />
+        <img src="wash3.jpeg" />
+      </div>
+
+      <!-- Types of Vehicles We Wash -->
+      <div class="service">
+        <div class="service-text">
+          <h3>Types of Vehicles We Wash</h3>
+          <p>At OZZO, we provide comprehensive cleaning services for a wide range of vehicles. Whether it's your
+            personal car or a commercial vehicle, our expert team is equipped to handle it all.<br> </p>
+          <p> Our services cover standard vehicles like cars, bikes, and autos, as well as agricultural and heavy-duty
+            machines such as tractors, harvesters, and JCBs. We also cater to larger vehicles including buses, lorries,
+            mini buses, goods carriers, and DCM trucks.</p>
+          <p> No matter the type or size, every vehicle receives the same level of care and professional detailing to
+            ensure a spotless, showroom-quality finish.</p>
+        </div>
+      </div>
+
+
+      <!-- Convenient Doorstep Service -->
+      <div class="service">
+        <div class="service-text">
+          <h3>Convenient Doorstep Service</h3>
+          <p>Forget the hassle of visiting a service center. Our mobile units bring complete washing and detailing
+            directly to your location, saving you time while delivering quality service at your convenience.</p>
+        </div>
+      </div>
+
+      <!--Eco-Friendly Cleaning Solutions -->
+      <div class="service">
+        <div class="service-text">
+          <h3>Eco-Friendly Cleaning Solutions</h3>
+          <p>We care about your vehicle and the environment. That’s why we use biodegradable, water-saving products and
+            gentle cleaning techniques that protect your vehicle's paint while conserving resources.</p>
+        </div>
+      </div>
+
+      <!--Professional Team & Tools-->
+      <div class="service">
+        <div class="service-text">
+          <h3>Professional Team & Tools</h3>
+          <p>Our care experts are trained in handling all types of vehicles using advanced tools and equipment. From
+            high-pressure washes to vacuuming and waxing, we ensure precision and attention to detail.</p>
+        </div>
+      </div>
+
+      <!-- Interior & Exterior Detailing -->
+      <div class="service">
+        <div class="service-text">
+          <h3>Interior & Exterior Detailing</h3>
+          <p>We go beyond just washing. Our detailing packages include dashboard cleaning, seat vacuuming, tire
+            polishing, and exterior waxing – giving your vehicle a complete rejuvenation inside and out.</p>
+        </div>
+      </div>
+
+      <!--Affordable & Reliable -->
+      <div class="service">
+        <div class="service-text">
+          <h3>Affordable & Reliable</h3>
+          <p>OZZO offers vehicles washing services at competitive rates without compromising on quality. Trust us
+            to
+            keep your vehicle clean, shiny, and protected – on a schedule that works for you.</p>
+        </div>
+      </div>
+
+
+      <div class="service">
+        <div class="service-text">
+          <p>Choose OZZO for hassle-free, high-quality washing services tailored to your needs. Book now and
+            experience the difference in every wash!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="form-group">
+    <a href="carwashapply.html" class="apply-btn">Book Your Wash</a>
+  </div>
+  <div id="popupForm" class="popup-overlay">
+    <div class="popup-content">
+
+      <!-- Heading Across Top -->
+      <div class="popup-title">
+        <h2>Book Your Wash</h2>
+      </div>
+
+      <!-- Flex Row: Image + Form -->
+      <div class="popup-body">
+        <div class="popup-left">
+          <img src="carwash.png" alt="Car Wash Image">
+        </div>
+
+        <div class="popup-right">
+          <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="tel" placeholder="Mobile Number" required>
+            <input type="text" placeholder="Vehicle Type" required>
+            <textarea placeholder="Address / Special Request" rows="4"></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <p>&copy; 2025 OZZO. All Rights Reserved.</p>
+    <p>Powered by <a href="https://www.vspazetechnologies.in/" target="_blank">vspaze technologies</a></p>
+  </footer>
+  <button id="scrollTopBtn" title="Go to top">↑</button>
+  <script src="wash.js"></script>
+</body>
+
+</html>

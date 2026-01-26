@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Franchise - OZZO</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="Franchise.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+
+      <!-- Menu icon (left on mobile) -->
+      <div class="menu-icon" id="menuToggle" onclick="toggleMenu()">☰</div>
+
+
+      <!-- Logo and site name (right on mobile) -->
+      <a href="../index.html" class="logo-link">
+        <div class="logo-left">
+          <img
+            src="../logo.jpeg"
+            alt="Logo">
+          <span class="site-name">
+            <span class="blink">OZZO</span>
+      
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation links -->
+      <nav class="nav-links" id="mobileMenu">
+        <a href="../index.html">Home</a>
+        <a href="../OUR-SERVICES/services.html">Services</a>
+        <a href="../FRANCHIES/Franchise.html" class="active">Franchise</a>
+        <a href="../CONTACT US/contact.html">Contact</a>
+        <a href="../ABOUT US/about.html">About</a>
+      </nav>
+
+    </div>
+  </header>
+  <div id="mainContent"></div>
+  <section class="services-section">
+    <h2 id="animatedHeading">
+      <!-- Will be populated by JS -->
+    </h2>
+    <p>Explore exciting franchise opportunities and become a trusted partner with OZZO in delivering premium
+      services.</p>
+
+
+    <div class="services-grid">
+
+      <!-- Card 1 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../CAR-WASHING/wash1.jpeg" class="active" />
+          <img src="../CAR-WASHING/wash2.jpeg" />
+          <img src="../CAR-WASHING/wash3.jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-car"></i></div>
+        <div class="service-content">
+          <h3>Car Washing</h3>
+          <p>High pressure washing for sparkling clean vehicles.</p>
+          <a href="../CAR-WASHING/wash.html">View Service</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../HOME-CLEAN/home1.jpeg" class="active" />
+          <img src="../HOME-CLEAN/home2.jpeg" />
+          <img src="../HOME-CLEAN/home3.jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-broom"></i></div>
+        <div class="service-content">
+          <h3>Home Cleaning</h3>
+          <p>Reliable home cleaning services with trained staff.</p>
+          <a href="../HOME-CLEAN/home.html">View Service</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../CAR-RENT/rent1.jpeg" class="active" />
+          <img src="../CAR-RENT/rent2.jpeg" />
+          <img src="../CAR-RENT/rent3.jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-car-side"></i></div>
+        <div class="service-content">
+          <h3>Car Rental</h3>
+          <p>Rent cars by hour or day at the best prices.</p>
+          <a href="../CAR-RENT/rent.html">View Service</a>
+        </div>
+      </div>
+
+
+      <!-- Card 4 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../MOBILE/mobile1.jpeg" class="active" />
+          <img src="../MOBILE/mobile2.jpeg" />
+          <img src="../MOBILE/mobile3.jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-mobile-alt"></i></div>
+        <div class="service-content">
+          <h3>Mobiles & Accessories</h3>
+          <p>Latest mobile phones and accessories at great prices.</p>
+          <a href="../MOBILE/mobile.html">View Service</a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../GOLD/gold1 (1).jpeg" class="active" />
+          <img src="../GOLD/gold1 (2).jpeg" />
+          <img src="../GOLD/gold1 (3).jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-ring"></i></div>
+        <div class="service-content">
+          <h3>One Gram Gold</h3>
+          <p>Beautiful and affordable one gram gold jewellery.</p>
+          <a href="../GOLD/gold.html">View Service</a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../EVENT-ORG/event1.jpeg" class="active" />
+          <img src="../EVENT-ORG/event2.jpeg" />
+          <img src="../EVENT-ORG/event3.jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-calendar-alt"></i></div>
+        <div class="service-content">
+          <h3>Event Organization</h3>
+          <p>Professional event planning for weddings and parties.</p>
+          <a href="../EVENT-ORG/event.html">View Service</a>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../FASHION-OUTFITS/fashion1 (1).jpeg" class="active" />
+          <img src="../FASHION-OUTFITS/fashion1 (2).jpeg" />
+          <img src="../FASHION-OUTFITS/fashion1 (3).jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-tshirt"></i></div>
+        <div class="service-content">
+          <h3>Fashion Outfits</h3>
+          <p>Trendy and stylish outfits for all occasions.</p>
+          <a href="../FASHION-OUTFITS/fashion.html">View Service</a>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../GROCERIES/Gimg1.jpeg" class="active" />
+          <img src="../GROCERIES/Gimg2.jpeg" />
+          <img src="../GROCERIES/Gimg3.jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-shopping-basket"></i></div>
+        <div class="service-content">
+          <h3>Groceries</h3>
+          <p>Fresh groceries and daily essentials delivered.</p>
+          <a href="../GROCERIES/groceries.html">View Service</a>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../TEMPEROY-DRIVERS/TDimg1.jpeg" class="active" />
+          <img src="../TEMPEROY-DRIVERS/TDimg2.jpeg" />
+          <img src="../TEMPEROY-DRIVERS/TDimg3.jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-user-tie"></i></div>
+        <div class="service-content">
+          <h3>Temporary Drivers</h3>
+          <p>On-demand skilled drivers for personal or business use.</p>
+          <a href="../TEMPEROY-DRIVERS/drivers.html">View Service</a>
+        </div>
+      </div>
+
+      <!-- Card 10 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../BOOKS/books1.jpeg" class="active" />
+          <img src="../BOOKS/books2.jpeg" />
+          <img src="../BOOKS/books3.jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-user-tie"></i></div>
+        <div class="service-content">
+          <h3>Books & Stationery</h3>
+          <p>On-demand skilled drivers for personal or business use.</p>
+          <a href="../BOOKS/books.html">View Service</a>
+        </div>
+      </div>
+
+      <!-- Card 11 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../SELF-DRIVE-CAR/SDimg1.jpeg" class="active" />
+          <img src="../SELF-DRIVE-CAR/SDimg2.jpeg" />
+          <img src="../SELF-DRIVE-CAR/SDimg3.jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-user-tie"></i></div>
+        <div class="service-content">
+          <h3>Self Drive Cars</h3>
+          <p>Self-drive cars available anytime—perfect for trips, work, or daily travel.</p>
+          <a href="../SELF-DRIVE-CAR/self.html">View Service</a>
+        </div>
+      </div>
+
+      <!-- Card 12 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../CLOUD TAILORS/Tailors1.jpeg" class="active" />
+          <img src="../CLOUD TAILORS/Tailors2.jpeg" />
+          <img src="../CLOUD TAILORS/Tailors3.jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-user-tie"></i></div>
+        <div class="service-content">
+          <h3>Cloud Tailors</h3>
+          <p>Custom-fit clothing, designed and delivered to your doorstep.</p>
+          <a href="../CLOUD TAILORS/Tailors.html">View Service</a>
+        </div>
+      </div>
+
+      <!-- Card 13 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../COMPUTER SERVICE/computer (1).jpeg" class="active" />
+          <img src="../COMPUTER SERVICE/computer (2).jpeg" />
+          <img src="../COMPUTER SERVICE/computer (3).jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-user-tie"></i></div>
+        <div class="service-content">
+          <h3>Computers And Services</h3>
+          <p>Personalized tech support and devices, brought directly to your home or office.</p>
+          <a href="../COMPUTER SERVICE/computer.html">View Service</a>
+        </div>
+      </div>
+      <!-- Card 14 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../HOME APPLIANCES/Home Appliances (1).jpeg" class="active" />
+          <img src="../HOME APPLIANCES/Home Appliances (2).jpeg" />
+          <img src="../HOME APPLIANCES/HomeAppliances (3).jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-user-tie"></i></div>
+        <div class="service-content">
+          <h3>Home Appliances</h3>
+          <p>we offer everything to make your daily life easier and more efficient.</p>
+          <a href="../HOME APPLIANCES/HomeAppliances.html">View Service</a>
+        </div>
+      </div>
+
+      <!-- Card 15 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../WATER & MILK/water-milk (1).jpeg" class="active" />
+          <img src="../WATER & MILK/Water-Milk (2).jpeg" />
+          <img src="../WATER & MILK/water-milk (3).jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-user-tie"></i></div>
+        <div class="service-content">
+          <h3>Water & Milk Services</h3>
+          <p>we ensure the highest quality water and milk supply for your daily needs.</p>
+          <a href="../WATER & MILK/WaterMilk.html">View Service</a>
+        </div>
+      </div>
+      <!-- Card 16 -->
+      <div class="service-card">
+        <div class="carousel">
+          <img src="../TUITION & COMPUTER INSTUTIONS/Tuition-Institutions 1.jpeg" class="active" />
+          <img src="../TUITION & COMPUTER INSTUTIONS/Tuition-Institutions (2).jpeg" />
+          <img src="../TUITION & COMPUTER INSTUTIONS/Tuition-Institutions (3).jpeg" />
+        </div>
+        <div class="icon-circle"><i class="fas fa-user-tie"></i></div>
+        <div class="service-content">
+          <h3>Tuition & Computer Institutions</h3>
+          <p>Quality education, skill-building through our tuition programs and computer institutes.</p>
+          <a href="../TUITION & COMPUTER INSTUTIONS/Tuition-Computer-Institutions.html">View Service</a>
+        </div>
+      </div>
+    </div>
+    <button id="nextBtn" onclick="showForm()">Next</button>
+  </section>
+  </div>
+  <footer>
+    <p>&copy; 2025 OZZO. All Rights Reserved.</p>
+    <p>Powered by <a href="https://www.vspazetechnologies.in/" target="_blank">vspaze technologies</a></p>
+  </footer>
+
+
+  <!-- Franchise Form Popup -->
+  <div id="popupForm" class="popup-overlay">
+    <div class="popup-content">
+
+      <!-- Close Button -->
+      <button class="popup-close" onclick="closePopup()">✕</button>
+
+      <!-- Title -->
+      <div class="popup-title">
+        <h2>Apply for Franchise</h2>
+      </div>
+
+      <!-- Body: Image + Form -->
+      <div class="popup-body">
+        <!-- Left Image -->
+        <div class="popup-left">
+          <img
+            src="./franches.jpeg"
+            alt="Franchise Image">
+        </div>
+
+        <!-- Right Form -->
+        <div class="popup-right">
+          <form id="franchiseForm" onsubmit="handleFranchiseSubmit(event)">
+            <input type="text" id="selectedServicePopup" name="services" placeholder="Selected Services" readonly>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="tel" id="mobile" name="contact" placeholder="Mobile Number" required>
+            <input type="text" id="location" name="location" placeholder="Location" required>
+            <textarea id="message" name="message" placeholder="Any Message / Address" rows="4"></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Message Popup -->
+  <div id="successMessage" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+
+      <div class="popup-body">
+
+        <!-- Success Image -->
+        <div class="popup-left">
+          <img src="https://uploads.onecompiler.io/42y68y97m/43a86mbvc/submit_success.png" alt="Success Image">
+        </div>
+
+        <div class="popup-title">
+          <h2>Application Submitted Successfully!</h2>
+        </div>
+        <!-- Message + Button -->
+        <div class="popup-right">
+          <p>Thank you for applying. Our team will get in touch with you soon.</p>
+          <a href="Franchise.html" style="text-decoration: none;">
+            <button>Back to Franchise</button>
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <button id="scrollTopBtn" title="Go to top">↑</button>
+  <script src="Franchise.js"></script>
+</body>
+
+</html>

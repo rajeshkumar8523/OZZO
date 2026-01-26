@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Appliances Services - OZZO</title>
+  <link rel="stylesheet" href="../CAR-WASHING/wash.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+
+      <!-- Menu icon (left on mobile) -->
+      <div class="menu-icon" id="menuToggle" onclick="toggleMenu()">☰</div>
+
+      <!-- Logo and site name (right on mobile) -->
+      <a href="../index.html" class="logo-link">
+        <div class="logo-left">
+          <img
+            src="../logo.jpeg"
+            alt="Logo">
+          <span class="site-name">
+            <span class="blink">OZZO</span>
+            
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation links -->
+      <nav class="nav-links" id="mobileMenu">
+        <a href="../index.html">Home</a>
+        <a href="../OUR-SERVICES/services.html" class="active">Services</a>
+        <a href="../FRANCHIES/Franchise.html">Franchise</a>
+        <a href="../CONTACT US/contact.html">Contact</a>
+        <a href="../ABOUT US/about.html">About</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+<section id="Home Appliances">
+  <div class="container">
+
+    <h2 class="service-heading">Home Appliances</h2>
+    <p class="service-content">
+      At OZZO, we bring innovation and convenience to your home with our curated range of top-quality home appliances.
+      From kitchen essentials to advanced cleaning solutions, we offer everything to make your daily life easier and more efficient.
+    </p>
+
+    <!-- Main Image Carousel -->
+    <div class="carousel">
+      <img src="Home Appliances (1).jpeg" class="active" />
+      <img src="Home Appliances (2).jpeg" />
+      <img src="HomeAppliances (3).jpeg" />
+    </div>
+
+    <!-- Kitchen Appliances -->
+    <div class="service">
+      <div class="service-text">
+        <h3>Kitchen Appliances</h3>
+        <p>Explore our collection of modern kitchen tools including microwave ovens, mixers, induction stoves, and electric kettles — designed for effortless cooking and time-saving efficiency.</p>
+      </div>
+    </div>
+
+    <!-- Cleaning Solutions -->
+    <div class="service">
+      <div class="service-text">
+        <h3>Cleaning Solutions</h3>
+        <p>Keep your home spotless with vacuum cleaners, dishwashers, and automatic mops that combine power and ease of use with energy efficiency.</p>
+      </div>
+    </div>
+
+    <!-- Laundry Essentials -->
+    <div class="service">
+      <div class="service-text">
+        <h3>Laundry Essentials</h3>
+        <p>Discover advanced washing machines, dryers, and steam irons that ensure your clothes stay fresh, clean, and wrinkle-free.</p>
+      </div>
+    </div>
+
+    <!-- Air & Water Purifiers -->
+    <div class="service">
+      <div class="service-text">
+        <h3>Air & Water Purifiers</h3>
+        <p>Ensure your family's health with our range of high-efficiency air purifiers and RO water purifiers — built to deliver pure, safe, and fresh living environments.</p>
+      </div>
+    </div>
+
+    <!-- Smart Home Devices -->
+    <div class="service">
+      <div class="service-text">
+        <h3>Smart Home Devices</h3>
+        <p>Upgrade to smart living with Alexa-enabled devices, Wi-Fi air conditioners, and automated lighting systems — all controllable with your smartphone.</p>
+      </div>
+    </div>
+
+    <!-- Personal Care Gadgets -->
+    <div class="service">
+      <div class="service-text">
+        <h3>Personal Care Gadgets</h3>
+        <p>From electric shavers and trimmers to hairdryers and massagers, we offer personal care tools that match your grooming and wellness needs.</p>
+      </div>
+    </div>
+
+    <!-- Refrigeration Solutions -->
+    <div class="service">
+      <div class="service-text">
+        <h3>Refrigeration Solutions</h3>
+        <p>Find single-door, double-door, and side-by-side refrigerators with advanced cooling technologies and power savings for every household size.</p>
+      </div>
+    </div>
+
+    <!-- Cooking Appliances -->
+    <div class="service">
+      <div class="service-text">
+        <h3>Cooking Appliances</h3>
+        <p>Choose from a range of OTGs, air fryers, and electric cooktops for healthier and faster cooking at home.</p>
+      </div>
+    </div>
+
+    <!-- Home Comfort Systems -->
+    <div class="service">
+      <div class="service-text">
+        <h3>Home Comfort Systems</h3>
+        <p>Stay comfortable all year round with energy-efficient air conditioners, room heaters, and air coolers built for Indian climates.</p>
+      </div>
+    </div>
+
+    <!-- Security & Surveillance -->
+    <div class="service">
+      <div class="service-text">
+        <h3>Security & Surveillance</h3>
+        <p>Protect your home with our selection of CCTV cameras, video doorbells, and motion sensors with smart alerts and cloud storage.</p>
+      </div>
+    </div>
+
+    <!-- Final Call to Action -->
+    <div class="service">
+      <div class="service-text">
+        <p>Trust OZZO for reliable, energy-efficient, and innovative home appliances tailored to your modern lifestyle. Contact us today to explore the full range.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <div class="form-group">
+    <a href="carwashapply.html" class="apply-btn">Book Your Wash</a>
+  </div>
+  <div id="popupForm" class="popup-overlay">
+    <div class="popup-content">
+
+      <!-- Heading Across Top -->
+      <div class="popup-title">
+        <h2>Book Your Wash</h2>
+      </div>
+
+      <!-- Flex Row: Image + Form -->
+      <div class="popup-body">
+        <div class="popup-left">
+          <img src="Home-Appliances.png" alt="Car Wash Image">
+        </div>
+
+        <div class="popup-right">
+          <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="tel" placeholder="Mobile Number" required>
+            <input type="text" placeholder="Vehicle Type" required>
+            <textarea placeholder="Address / Special Request" rows="4"></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <footer>
+    <p>&copy; 2025 OZZO. All Rights Reserved.</p>
+    <p>Powered by <a href="https://www.vspazetechnologies.in/" target="_blank">vspaze technologies</a></p>
+  </footer>
+  <button id="scrollTopBtn" title="Go to top">↑</button>
+  <script src="../CAR-WASHING/wash.js"></script>
+</body>
+
+</html>
