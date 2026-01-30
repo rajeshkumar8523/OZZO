@@ -1,22 +1,16 @@
-
-
 //// AUTO SLIDE IMAGES ////
-const carousels = document.querySelectorAll('.carousel');
+const carousels = document.querySelectorAll(".carousel");
 
-carousels.forEach(carousel => {
-  const images = carousel.querySelectorAll('img');
+carousels.forEach((carousel) => {
+  const images = carousel.querySelectorAll("img");
   let index = 0;
 
   setInterval(() => {
-    images[index].classList.remove('active');
+    images[index].classList.remove("active");
     index = (index + 1) % images.length;
-    images[index].classList.add('active');
+    images[index].classList.add("active");
   }, 3000);
 });
-
-
-
-
 
 //// NAV MENUBAR ////
 const menu = document.getElementById("mobileMenu");
@@ -42,7 +36,6 @@ function handleOutsideClick(event) {
   }
 }
 
-
 // Optional: Reset on resize
 window.addEventListener("resize", () => {
   if (window.innerWidth >= 768) {
@@ -50,8 +43,6 @@ window.addEventListener("resize", () => {
     toggleBtn.textContent = "☰";
   }
 });
-
-
 
 //// HEADING FLY ////
 // Reusable function to animate text letter by letter
@@ -75,13 +66,12 @@ function animateHeadingText(text, elementId) {
 }
 
 // Call the function for both headings
-animateHeadingText("Our Services", "animatedHeading");
+ 
 animateHeadingText("Essentials", "essitinalHeading");
-
-
-
-
-
+animateHeadingText("E-commerce Sector Business", "ecommerceHeading");
+animateHeadingText("Rental Sector Business", "rentalHeading");
+animateHeadingText("Service Sector Business", "serviceHeading");
+animateHeadingText("Training Sector Business", "trainingHeading");
 
 //// SCROLL BAR ////
 

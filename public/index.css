@@ -24,7 +24,7 @@ body {
 }
 
 header {
-  background-color: #036fe2;
+  background-color: #000;
   color: white;
   padding: 15px 0;
   position: fixed;
@@ -65,7 +65,7 @@ header {
 }
 
 .nav-links a.active {
-  color: #000000;
+  color: red;
   /* Highlight color */
   font-weight: bold;
   border-bottom: 2px solid #fff;
@@ -86,7 +86,8 @@ nav a {
 }
 
 nav a:hover {
-  color: #000000;
+  color: red;
+  border-bottom: 2px solid #fff;
 }
 
 
@@ -94,7 +95,7 @@ nav a:hover {
   text-decoration: none;
   color: inherit;
   display: inline-block;
-  margin-left: 25%;
+  margin-left: 20%;
 }
 
 .logo-left {
@@ -105,9 +106,9 @@ nav a:hover {
 }
 
 .logo-left img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
+  width: 300%;
+  height: 90px;
+ 
 }
 
 .site-name {
@@ -346,6 +347,8 @@ nav a:hover {
 }
 .services-section h2 {
   margin-bottom: 20px;
+  margin-top: 40px;
+  font: bold;
 }
 .letter {
   display: inline-block;
@@ -730,7 +733,7 @@ footer a {
 
   .logo-link {
     margin-left: 0%;
-    margin-right: 40%;
+    margin-right: 35%;
     /* ✅ Pushes it to the left */
   }
 
@@ -745,8 +748,8 @@ footer a {
   }
 
   .logo-left img {
-    width: 50px;
-    height: 50px;
+    width: 250px;
+    height: 80px;
   }
 
   .menu-icon {
@@ -845,6 +848,7 @@ footer a {
     text-align: start;
     margin-left: 25px;
     margin-bottom: 8px;
+    margin-top: 25px;
   }
 
   .services-section p {
@@ -946,8 +950,8 @@ footer a {
 /* Responsive for phones and small devices */
 @media (max-width: 600px) {
   .logo-left img {
-    width: 50px;
-    height: 50px;
+    width: 230px;
+    height: 70px;
     justify-items: flex-start;
   }
 
