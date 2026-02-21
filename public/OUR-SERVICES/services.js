@@ -1,21 +1,16 @@
-
 //// AUTO SLIDE IMAGES ////
-const carousels = document.querySelectorAll('.carousel');
+const carousels = document.querySelectorAll(".carousel");
 
-carousels.forEach(carousel => {
-  const images = carousel.querySelectorAll('img');
+carousels.forEach((carousel) => {
+  const images = carousel.querySelectorAll("img");
   let index = 0;
 
   setInterval(() => {
-    images[index].classList.remove('active');
+    images[index].classList.remove("active");
     index = (index + 1) % images.length;
-    images[index].classList.add('active');
+    images[index].classList.add("active");
   }, 3000);
 });
-
-
-
-
 
 //// NAV MENUBAR ////
 const menu = document.getElementById("mobileMenu");
@@ -41,7 +36,6 @@ function handleOutsideClick(event) {
   }
 }
 
-
 // Optional: Reset on resize
 window.addEventListener("resize", () => {
   if (window.innerWidth >= 768) {
@@ -50,36 +44,45 @@ window.addEventListener("resize", () => {
   }
 });
 
-
-
-
-
-
-//// HEADING FLY ////
-const text = "Our Services";
-const heading = document.getElementById("animatedHeading");
-
-heading.innerHTML = ""; // Clear
-
-[...text].forEach((char, i) => {
-  const span = document.createElement("span");
-
-  // Handle space character
-  if (char === " ") {
-    span.innerHTML = "&nbsp;"; // Render space properly
-  } else {
-    span.textContent = char;
-    span.style.animationDelay = `${ i * 0.06 }s`;
+// HEADING FLY ANIMATION
+// Reusable function to animate text letter by letter
+function animateHeadingText(text, elementId) {
+  const heading = document.getElementById(elementId);
+  
+  // Check if element exists
+  if (!heading) {
+    console.error(`Element with id "${elementId}" not found`);
+    return;
   }
+  
+  heading.innerHTML = "";
 
-  span.classList.add("letter");
-  heading.appendChild(span);
+  [...text].forEach((char, i) => {
+    const span = document.createElement("span");
+
+    if (char === " ") {
+      span.innerHTML = "&nbsp;";
+    } else {
+      span.textContent = char;
+      span.style.animationDelay = `${i * 0.06}s`;
+    }
+
+    span.classList.add("letter");
+    heading.appendChild(span);
+  });
+}
+
+// Call the function for all headings
+// Make sure you call this after the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  animateHeadingText("E-commerce Business Sector", "ecommerceHeading");
+  animateHeadingText("Management Business Sector", "managementHeading");
+  animateHeadingText("Rental Business Sector", "rentalHeading");
+  animateHeadingText("Service Business Sector", "serviceHeading");
+  animateHeadingText("Training Business Sector", "trainingHeading");
 });
 
-
-
-
-
+ 
 //// SCROLL BAR ////
 
 const scrollTopBtn = document.getElementById("scrollTopBtn");
@@ -111,4 +114,3 @@ function slowScrollToTop() {
 
   requestAnimationFrame(scrollStep);
 }
-

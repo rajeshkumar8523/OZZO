@@ -1,8 +1,9 @@
-
 //// EMAILJS  FRANCHISE APPLY ////
 window.onload = function () {
   emailjs.init("bbTCIGiaKx5c6q8ju"); // ✅ Your actual EmailJS public key
-  document.getElementById("franchiseForm").addEventListener("submit", handleFranchiseSubmit);
+  document
+    .getElementById("franchiseForm")
+    .addEventListener("submit", handleFranchiseSubmit);
 };
 
 const cards = document.querySelectorAll(".service-card");
@@ -13,7 +14,7 @@ function updateNextVisibility() {
   nextBtn.style.display = selectedServices.length > 0 ? "inline-block" : "none";
 }
 
-cards.forEach(card => {
+cards.forEach((card) => {
   const serviceName = card.querySelector("h3")?.innerText.trim();
 
   const circle = document.createElement("div");
@@ -42,7 +43,8 @@ function showForm() {
   if (selectedServices.length > 0) {
     document.getElementById("mainContent").style.display = "none";
     document.getElementById("popupForm").style.display = "flex";
-    document.getElementById("selectedServicePopup").value = selectedServices.join(", ");
+    document.getElementById("selectedServicePopup").value =
+      selectedServices.join(", ");
   } else {
     alert("Please select at least one service.");
   }
@@ -53,8 +55,6 @@ function closePopup() {
   document.getElementById("mainContent").style.display = "block";
 }
 
-
-
 async function handleFranchiseSubmit(event) {
   event.preventDefault();
 
@@ -64,13 +64,19 @@ async function handleFranchiseSubmit(event) {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
     contact: document.getElementById("mobile").value,
+    gender: document.getElementById("gender").value, // Using getElementById after fixing HTML
+    qualification: document.getElementById("qualification").value,
     location: document.getElementById("location").value,
     services: document.getElementById("selectedServicePopup").value,
     message: document.getElementById("message").value,
   };
 
   try {
-    const response = await emailjs.send("service_3ti5uys", "template_dwk55jv", emailData);
+    const response = await emailjs.send(
+      "service_3ti5uys",
+      "template_dwk55jv",
+      emailData,
+    );
     console.log("✅ SUCCESS!", response.status, response.text);
     document.getElementById("franchiseForm").reset();
     document.getElementById("popupForm").style.display = "none";
@@ -81,25 +87,19 @@ async function handleFranchiseSubmit(event) {
   }
 }
 
-
-
-
 //// AUTO SLIDE IMAGES ////
-const carousels = document.querySelectorAll('.carousel');
+const carousels = document.querySelectorAll(".carousel");
 
-carousels.forEach(carousel => {
-  const images = carousel.querySelectorAll('img');
+carousels.forEach((carousel) => {
+  const images = carousel.querySelectorAll("img");
   let index = 0;
 
   setInterval(() => {
-    images[index].classList.remove('active');
+    images[index].classList.remove("active");
     index = (index + 1) % images.length;
-    images[index].classList.add('active');
+    images[index].classList.add("active");
   }, 3000);
 });
-
-
-
 
 //// NAV MENUBAR ////
 const menu = document.getElementById("mobileMenu");
@@ -133,31 +133,43 @@ window.addEventListener("resize", () => {
   }
 });
 
+// HEADING FLY ANIMATION
+// Reusable function to animate text letter by letter
+function animateHeadingText(text, elementId) {
+  const heading = document.getElementById(elementId);
 
-
-//// HEADING FLY ////
-const text = "Our Franchise";
-const heading = document.getElementById("animatedHeading");
-
-heading.innerHTML = ""; // Clear
-
-[...text].forEach((char, i) => {
-  const span = document.createElement("span");
-
-  // Handle space character
-  if (char === " ") {
-    span.innerHTML = "&nbsp;"; // Render space properly
-  } else {
-    span.textContent = char;
-    span.style.animationDelay = `${i * 0.06}s`;
+  // Check if element exists
+  if (!heading) {
+    console.error(`Element with id "${elementId}" not found`);
+    return;
   }
 
-  span.classList.add("letter");
-  heading.appendChild(span);
+  heading.innerHTML = "";
+
+  [...text].forEach((char, i) => {
+    const span = document.createElement("span");
+
+    if (char === " ") {
+      span.innerHTML = "&nbsp;";
+    } else {
+      span.textContent = char;
+      span.style.animationDelay = `${i * 0.06}s`;
+    }
+
+    span.classList.add("letter");
+    heading.appendChild(span);
+  });
+}
+
+// Call the function for all headings
+// Make sure you call this after the DOM is loaded
+document.addEventListener("DOMContentLoaded", function () {
+  animateHeadingText("E-commerce Business Sector", "ecommerceHeading");
+  animateHeadingText("Management Business Sector", "managementHeading");
+  animateHeadingText("Rental Business Sector", "rentalHeading");
+  animateHeadingText("Service Business Sector", "serviceHeading");
+  animateHeadingText("Training Business Sector", "trainingHeading");
 });
-
-
-
 
 //// SCROLL BAR ////
 const scrollTopBtn = document.getElementById("scrollTopBtn");

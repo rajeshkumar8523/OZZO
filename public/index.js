@@ -68,10 +68,11 @@ function animateHeadingText(text, elementId) {
 // Call the function for both headings
  
 animateHeadingText("Essentials", "essitinalHeading");
-animateHeadingText("E-commerce Sector Business", "ecommerceHeading");
-animateHeadingText("Rental Sector Business", "rentalHeading");
-animateHeadingText("Service Sector Business", "serviceHeading");
-animateHeadingText("Training Sector Business", "trainingHeading");
+animateHeadingText("E-commerce Business Sector  ", "ecommerceHeading");
+animateHeadingText("Management Business Sector", "managementHeading");
+animateHeadingText("Rental Business Sector", "rentalHeading");
+animateHeadingText("Service Business Sector", "serviceHeading");
+animateHeadingText("Training Business Sector", "trainingHeading");
 
 //// SCROLL BAR ////
 

@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  background-color: #036fe2;
+  background-color: #000;
   color: white;
   padding: 15px 0;
   position: fixed;
@@ -49,7 +49,7 @@ header {
 }
 
 .nav-links a.active {
-  color: #000000;
+  color: #036fe2;
   /* Highlight color */
   font-weight: bold;
   border-bottom: 2px solid #fff;
@@ -70,32 +70,31 @@ nav a {
 }
 
 nav a:hover {
-  color: #000000;
+  color: #036fe2;
 }
 
-
+/* Base styles - remove conflicting margins */
 .logo-link {
   text-decoration: none;
   color: inherit;
   display: inline-block;
-  margin-left: 25%;
+  /* Remove margin-left: 1%; from here */
 }
 
 .logo-left {
   display: flex;
   align-items: center;
   gap: 10px;
-
+  margin-top: 5%;
 }
 
 .logo-left img {
-  width: 70px;
-  height: 68px;
-  border-radius: 50%;
+  width: 250px;
+  height: 150px;
 }
 
 .site-name {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: bold;
 }
 
@@ -110,15 +109,16 @@ nav a:hover {
 .services-section {
   text-align: center;
   padding: 50px 20px;
-
 }
 
 .services-section h2 {
   font-size: 32px;
   text-align: start;
-  margin-left: 20%;
+  margin-left: 15%;
   margin-bottom: 10px;
+  margin-top: 45px;
 }
+
 .letter {
   display: inline-block;
   opacity: 0;
@@ -135,7 +135,7 @@ nav a:hover {
 .services-section p {
   color: #666;
   text-align: start;
-  margin-left: 20%;
+  margin-left: 15%;
   margin-bottom: 40px;
 }
 
@@ -150,7 +150,7 @@ nav a:hover {
 .service-card {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   transition: 0.3s;
   position: relative;
@@ -159,7 +159,7 @@ nav a:hover {
 }
 
 .service-card:hover {
-  background: #007BFF;
+  background: #007bff;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
@@ -193,7 +193,7 @@ nav a:hover {
   top: 200px;
   left: 50%;
   transform: translateX(-50%);
-  background: #007BFF;
+  background: #007bff;
   border: 6px solid #fff;
   color: white;
   width: 50px;
@@ -209,8 +209,8 @@ nav a:hover {
 
 .service-card:hover .icon-circle {
   background: #fff;
-  color: #007BFF;
-  border: 6px solid #007BFF;
+  color: #007bff;
+  border: 6px solid #007bff;
 }
 
 .service-content {
@@ -226,7 +226,7 @@ nav a:hover {
 .service-card p {
   color: #666;
   font-size: 14px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   text-align: center;
   margin-left: 0%;
   transition: color 0.3s ease;
@@ -239,13 +239,13 @@ nav a:hover {
 .service-card a {
   display: inline-block;
   background-color: #fff;
-  color: #007BFF;
-   border: 1px solid #007BFF;
+  color: #007bff;
+  border: 1px solid #007bff;
   font-weight: bold;
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 5px;
   transition: background-color 0.3s ease;
 }
 
@@ -260,7 +260,7 @@ nav a:hover {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  border: 3px solid #007BFF;
+  border: 3px solid #007bff;
   background-color: white;
   z-index: 2;
   cursor: pointer;
@@ -279,19 +279,17 @@ nav a:hover {
 
 .service-card.selected .select-circle {
   background-color: #fff;
-  color: #007BFF;
+  color: #007bff;
 }
 
 .service-card.selected .select-circle i {
   display: block;
 }
 
-
-
 #nextBtn {
   display: none;
 
-  background-color: #007BFF;
+  background-color: #007bff;
   color: white;
   margin: 4% auto 0 auto;
   /* Pushes down and centers */
@@ -299,7 +297,7 @@ nav a:hover {
   font-weight: bold;
   text-align: center;
   padding: 14px 28px;
-  border: 6px solid #007BFF;
+  border: 6px solid #007bff;
   border-radius: 15px;
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -311,22 +309,46 @@ nav a:hover {
 
 #nextBtn:hover {
   background-color: #fff;
-  color: #007BFF;
+  color: #007bff;
 }
 
+/* Popup Overlay */
 .popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: white;
+  background: #fff;
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
+/* Popup Content */
+.popup-content {
+  width: 90%;
+  max-width: 1000px;
+  min-width: 280px; /* Prevent form from becoming too narrow */
+  max-height: 90vh;
+  background: #fff;
+  backdrop-filter: blur(15px);
+  border: 2px solid #007bff;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 123, 255, 0.3);
+  animation: fadeInUp 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Hide horizontal scroll inside popup */
+  overflow-y: auto; /* Enable vertical scrolling inside popup */
+  position: relative;
+  margin: auto;
+}
 .popup-close {
   position: absolute;
   top: 12px;
@@ -334,25 +356,10 @@ nav a:hover {
   background: none;
   border: none;
   font-size: 24px;
-  color: #007BFF;
+  color: #007bff;
   cursor: pointer;
   z-index: 10000;
   /* Ensure it's on top */
-}
-
-
-.popup-content {
-  width: 90%;
-  max-width: 900px;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(15px);
-  border: 2px solid #007BFF;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 123, 255, 0.3);
-  overflow: hidden;
-  animation: fadeInUp 0.5s ease;
-  display: flex;
-  flex-direction: column;
 }
 
 /* Title styling */
@@ -360,8 +367,8 @@ nav a:hover {
   text-align: center;
   font-size: 28px;
   font-family: cursive;
-  color: #007BFF;
-  padding: 20px 0 0 0;
+  color: #007bff;
+  padding: 5px 0 0 0;
 }
 
 /* Horizontal split: image + form */
@@ -385,7 +392,6 @@ nav a:hover {
   display: block;
   justify-items: center;
   justify-content: center;
-
 }
 
 /* Right side form */
@@ -402,21 +408,79 @@ nav a:hover {
   padding: 10px;
   margin-bottom: 15px;
   width: 90%;
-  border: 2px solid #007BFF;
+  border: 2px solid #007bff;
   border-radius: 8px;
   font-size: 16px;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(3px);
 }
 
+/* Style for gender select dropdown */
+#gender {
+  width: 95%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.6);
+  color: #333;
+  cursor: pointer;
+}
+
+/* Style the placeholder/default option */
+#gender option {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(3px);
+  color: #333;
+  padding: 10px;
+}
+
+#gender option:first-child {
+  color: #999;
+}
+
+/* Hover state */
+#gender:hover {
+  border-color: #0056b3;
+}
+
+/* Focus state */
+#gender:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* Responsive for 768px */
+@media (max-width: 768px) {
+  #gender {
+    width: 80%;
+    padding: 12px;
+    font-size: 15px;
+    background-position: right 12px center;
+  }
+}
+
+@media (max-width: 480px) {
+  #gender {
+    width: 80%;
+    padding: 8px 12px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    background-position: right 8px center;
+    background-size: 14px;
+  }
+}
 .popup-right button {
-  background-color: #007BFF;
+  background-color: #007bff;
   color: white;
   margin-left: auto;
   width: 150px;
   font-weight: bold;
   padding: 10px 20px;
-  border: 6px solid #007BFF;
+  border: 6px solid #007bff;
   border-radius: 15px;
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -425,7 +489,7 @@ nav a:hover {
 
 .popup-right button:hover {
   background-color: #fff;
-  color: #007BFF;
+  color: #007bff;
 }
 
 /* Success Message Popup */
@@ -455,7 +519,7 @@ nav a:hover {
 #successMessage .popup-title h2 {
   font-size: 23px;
   margin-top: 20px;
-  color: #007BFF;
+  color: #007bff;
   font-family: cursive;
 }
 
@@ -469,13 +533,13 @@ nav a:hover {
 /* Back Button */
 #successMessage .popup-right button {
   margin-top: 10px;
-  background-color: #007BFF;
+  background-color: #007bff;
   color: white;
   font-weight: bold;
   padding: 10px 15px;
   justify-items: center;
   margin-right: 0%;
-  border: 2px solid #007BFF;
+  border: 2px solid #007bff;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -483,7 +547,7 @@ nav a:hover {
 
 #successMessage .popup-right button:hover {
   background-color: #fff;
-  color: #007BFF;
+  color: #007bff;
 }
 /* Scroll to Top Button */
 #scrollTopBtn {
@@ -491,7 +555,7 @@ nav a:hover {
   bottom: 120px;
   right: 30px;
   z-index: 999;
-  background: linear-gradient(145deg, #007BFF, #0056b3);
+  background: linear-gradient(145deg, #007bff, #0056b3);
   color: white;
   border: none;
   border-radius: 50%;
@@ -510,8 +574,8 @@ nav a:hover {
 
 #scrollTopBtn:hover {
   background: #fff;
-  color: #007BFF;
-  border: 2px solid #007BFF;
+  color: #007bff;
+  border: 2px solid #007bff;
   transform: scale(1.1);
 }
 
@@ -522,7 +586,6 @@ nav a:hover {
 }
 
 @keyframes moveUpDown {
-
   0%,
   100% {
     transform: translateY(0);
@@ -544,9 +607,8 @@ nav a:hover {
   }
 }
 
-
 footer {
-  background-color: #036fe2;
+  background-color: #000;
   padding: 10px;
   margin: 0;
   text-align: center;
@@ -570,21 +632,19 @@ footer a {
   .logo-left {
     display: flex;
     align-items: center;
-    /* ✅ Use center instead of 'left' */
-    justify-content: flex-start;
-    gap: 10px;
-
+    gap: 8px;
   }
 
   .logo-link {
-    margin-left: 0%;
-    margin-right: 40%;
-    /* ✅ Pushes it to the left */
+    margin-left: 0;
+    margin-right: 0; /* Reset all margins */
+    flex-shrink: 0; /* Prevent logo from shrinking */
   }
 
   .logo-left img {
-    width: 50px;
-    height: 50px;
+    width: 200px; /* Fixed width */
+    height: auto; /* Auto height to maintain aspect ratio */
+    max-width: 100%; /* Prevent overflow */
   }
 
   .menu-icon {
@@ -598,7 +658,7 @@ footer a {
     top: 79px;
     left: 41%;
     width: 60%;
-     background-color: #75a7dd;
+    background-color: #000;
     border-radius: 0 0 20px 20px;
     padding: 5px 5px 25px 2px;
     /* Increased bottom padding */
@@ -625,7 +685,9 @@ footer a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: 0.3s ease;
   }
-
+  .nav-links a.active {
+    color: #000;
+  }
   /* Hover effect */
   .nav-links a:hover {
     background-color: white;
@@ -633,7 +695,6 @@ footer a {
     transform: scale(1.03);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   }
-
 
   .nav-links.show {
     display: flex;
@@ -648,7 +709,7 @@ footer a {
   }
 
   footer {
-    background-color: #036fe2;
+    background-color: #000;
     padding: 5px;
     margin: 0;
     text-align: center;
@@ -657,44 +718,42 @@ footer a {
     color: white;
   }
 
-    .services-grid {
-    grid-template-columns: 1fr;
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    
-     margin: 0 auto;
+    max-width: 900px;
+    margin: 0 auto;
   }
-
   .services-section {
     text-align: center;
-    padding: 25px 10px;
-
+    padding: 30px 15px;
+    margin-left: 55px;
   }
 
   .services-section h2 {
     font-size: 20px;
     text-align: start;
     margin-left: 25px;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
   }
 
   .services-section p {
     color: #666;
     text-align: start;
-    margin-left: 25px;
     margin-bottom: 30px;
+    margin-left: 25px;
   }
 
   .service-card {
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     transition: 0.3s;
     position: relative;
     padding-bottom: 20px;
     height: 330px;
     width: 300px;
-     
   }
 
   .carousel {
@@ -746,7 +805,7 @@ footer a {
   .service-card a {
     display: inline-block;
     background-color: #fff;
-    color: #007BFF;
+    color: #007bff;
     font-weight: bold;
     text-decoration: none;
     padding: 6px 12px;
@@ -759,7 +818,7 @@ footer a {
   #nextBtn {
     display: none;
 
-    background-color: #007BFF;
+    background-color: #007bff;
     color: white;
     margin: 4% auto 0 auto;
     /* Pushes down and centers */
@@ -767,7 +826,7 @@ footer a {
     font-weight: bold;
     text-align: center;
     padding: 10px 20px;
-    border: 6px solid #007BFF;
+    border: 6px solid #007bff;
     border-radius: 14px;
     text-decoration: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -780,15 +839,129 @@ footer a {
 }
 
 @media (max-width: 768px) {
+  .logo-left img {
+    width: 180px; /* Smaller fixed width for mobile */
+    height: auto;
+  }
+
+  .logo-link {
+    margin-right: 0; /* Ensure no right margin */
+     margin-left: -13px;
+  }
+
+  .site-name .blink {
+    font-size: 24px;
+  }
+
+  .site-name .bowl {
+    font-size: 20px;
+  }
+
+  /* Services Section */
+  .services-section h2 {
+    font-size: 24px;
+  }
+
+  .services-section p {
+    font-size: 14px;
+  }
+
+  .services-grid {
+    gap: 15px;
+  }
+
+  .service-card {
+    height: 400px;
+  }
+
+  .carousel {
+    height: 180px;
+  }
+
+  .carousel img {
+    height: 180px;
+  }
+
+  .icon-circle {
+    top: 155px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border-width: 4px;
+  }
+
+  .service-content {
+    margin-top: 48px;
+    padding: 0 12px;
+  }
+
+  .service-card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .service-card p {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  .service-card a {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  /* Popup */
+  .popup-body {
+    flex-direction: column;
+  }
+
+  .popup-left,
+  .popup-right {
+    width: 100%;
+  }
+
+  .popup-left {
+    margin-bottom: 20px;
+  }
+
+  .popup-left img {
+    max-width: 250px;
+  }
+
+  .popup-title {
+    font-size: 24px;
+  }
+
+  .popup-right button {
+    width: 100%;
+  }
+
+  /* Next Button */
+  #nextBtn {
+    width: 180px;
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  /* Scroll Button */
+  #scrollTopBtn {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+    bottom: 100px;
+    right: 20px;
+  }
+
   .popup-content {
     width: 95%;
     max-width: 100%;
+    height: 98%;
     flex-direction: column;
     /* Stack image and form vertically */
   }
 
   .popup-title {
-    font-size: 19px;
+    font-size: 17px;
   }
 
   .popup-body {
@@ -812,7 +985,7 @@ footer a {
   }
 
   .popup-right {
-    padding: 20px;
+    padding: 15px;
     margin-top: 0%;
     align-items: center;
   }
@@ -829,13 +1002,11 @@ footer a {
   }
 
   .popup-right button {
-
     width: 50%;
     max-width: 150px;
     margin-right: 10%;
 
     padding: 8px 16px;
-
   }
 }
 
@@ -855,7 +1026,7 @@ footer a {
 
   #successMessage .popup-right button {
     width: 100%;
-     
+
     padding: 10px;
     font-size: 13px;
     margin-left: 0%;
@@ -865,8 +1036,8 @@ footer a {
 /* Responsive for phones and small devices */
 @media (max-width: 600px) {
   .logo-left img {
-    width: 50px;
-    height: 50px;
+    width: 180px;
+    
     justify-items: flex-start;
   }
 
@@ -890,7 +1061,6 @@ footer a {
     grid-template-columns: 1fr;
     gap: 20px;
     margin: 0 auto;
-     
   }
 
   .service-card {
@@ -916,5 +1086,166 @@ footer a {
     right: 10px;
     box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
   }
-
 }
+/* Medium Phone (480px and below) */
+@media (max-width: 480px) {
+    .logo-left {
+    gap: 5px; /* Reduce gap on very small screens */
+  }
+
+  .logo-left img {
+    width: 140px; /* Even smaller for very small screens */
+  }
+  .site-name .blink {
+    font-size: 20px;
+  }
+
+  .site-name .bowl {
+    font-size: 16px;
+  }
+
+  .menu-icon {
+    font-size: 24px;
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: 20px 10px;
+  }
+
+  .services-section h2 {
+    font-size: 22px;
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+
+  .services-section p {
+    padding: 0 10px;
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+
+  .services-grid {
+    padding: 0 10px;
+    gap: 20px;
+  }
+
+  .service-card {
+    min-height: 360px;
+  }
+
+  .carousel {
+    height: 180px;
+  }
+
+  .carousel img {
+    height: 180px;
+  }
+
+  .icon-circle {
+    top: 155px;
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    border-width: 3px;
+  }
+
+  .service-content {
+    margin-top: 48px;
+    padding: 0 10px;
+  }
+
+  .service-card h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .service-card p {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .service-card a {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .select-circle {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    border-width: 2px;
+  }
+
+  /* Next Button */
+  #nextBtn {
+    width: 160px;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 30px auto 0;
+  }
+
+  /* Popup */
+  .popup-overlay {
+    padding: 10px;
+  }
+
+  .popup-content {
+    width: 90%;
+    height: 90%;
+    
+    align-items: center;
+    margin-left: 15px;
+  }
+
+  .popup-title {
+    font-size: 17px;
+  }
+
+  .popup-left img {
+    max-width: 200px;
+  }
+
+  .popup-right input,
+  .popup-right textarea {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .popup-right button {
+    padding: 10px 20px;
+    font-size: 14px;
+    min-width: 120px;
+  }
+
+  /* Success Popup */
+  #successMessage .popup-left img {
+    max-width: 150px;
+  }
+
+  #successMessage .popup-title h2 {
+    font-size: 18px;
+  }
+
+  #successMessage .popup-right p {
+    font-size: 13px;
+  }
+
+  /* Scroll Button */
+  #scrollTopBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    bottom: 80px;
+    right: 15px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 15px;
+    font-size: 12px;
+    margin-top: 30px;
+  }
+}
+
+ 

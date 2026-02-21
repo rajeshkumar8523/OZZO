@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Washing Services - OZZO</title>
+    <link rel="stylesheet" href="../CAR-WASHING/wash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+
+            <!-- Menu icon (left on mobile) -->
+            <div class="menu-icon" id="menuToggle" onclick="toggleMenu()">☰</div>
+
+            <!-- Logo and site name (right on mobile) -->
+            <a href="../index.html" class="logo-link">
+                <div class="logo-left">
+                    <img src="../logo2.png" alt="Logo">
+
+                </div>
+            </a>
+
+            <!-- Navigation links -->
+            <nav class="nav-links" id="mobileMenu">
+                <a href="../index.html">Home</a>
+                <a href="../OUR-SERVICES/services.html" class="active">Services</a>
+                <a href="../FRANCHIES/Franchise.html">Franchise</a>
+                <a href="../CONTACT US/contact.html">Contact</a>
+                <a href="../ABOUT US/about.html">About</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <section id="Mobile Repair Training">
+        <div class="container">
+
+            <h2 class="service-heading">Mobile Repair Training Services</h2>
+            <p class="service-content">At OZZO, we provide expert mobile repair training designed to transform beginners
+                into skilled technicians. Our comprehensive courses cover both hardware and software troubleshooting for
+                all major smartphone brands, using industry-standard tools and real-world repair scenarios.</p>
+
+            <!-- Main Image -->
+            <div class="carousel">
+                <img src="./mobile-repair1.jpeg" class="active" />
+                <img src="./mobile-repair2.jpeg" />
+                <img src="./mobile-repair3.jpeg" />
+            </div>
+
+            <!-- Types of Mobile Repair We Teach -->
+            <div class="service">
+                <div class="service-text">
+                    <h3>Types of Mobile Repair We Teach</h3>
+                    <p>Our mobile repair training program covers a complete range of smartphone repair techniques for
+                        all major brands and models. Whether you're interested in basic repairs or advanced
+                        motherboard-level servicing, we provide comprehensive training.<br> </p>
+                    <p> We train students in screen replacement (LCD/OLED), battery replacement, charging port repairs,
+                        camera module replacement, speaker and microphone repairs, water damage treatment, motherboard
+                        troubleshooting, IC and chip-level repairs, software flashing and unlocking, network and signal
+                        issues, and Bluetooth/Wi-Fi repairs.</p>
+
+                </div>
+            </div>
+
+
+            <!-- Hands-On Practical Training -->
+            <div class="service">
+                <div class="service-text">
+                    <h3>Hands-On Practical Training</h3>
+                    <p>Forget theoretical learning only. We emphasize 80% practical training where each student gets
+                        individual working stations, real faulty mobile sets, and actual repair tools. You'll practice
+                        on live devices under expert supervision until you gain confidence.</p>
+                </div>
+            </div>
+
+            <!--Industry-Standard Tools & Equipment -->
+            <div class="service">
+                <div class="service-text">
+                    <h3>Industry-Standard Tools & Equipment</h3>
+                    <p>We provide training with professional repair tools including multimeters, DC power supplies, hot
+                        air rework stations, soldering machines, magnifying lamps, screwdriver sets, opening tools, and
+                        specialized software for mobile diagnostics and flashing.</p>
+                </div>
+            </div>
+
+            <!--Expert Trainers with Industry Experience-->
+            <div class="service">
+                <div class="service-text">
+                    <h3>Expert Trainers with Industry Experience</h3>
+                    <p>Learn from certified mobile repair professionals with 8+ years of field experience. Our trainers
+                        not only teach repair techniques but also share business insights, customer handling skills, and
+                        industry secrets for running a successful mobile repair business.</p>
+                </div>
+            </div>
+
+            <!-- Software & Hardware Comprehensive Training -->
+            <div class="service">
+                <div class="service-text">
+                    <h3>Software & Hardware Comprehensive Training</h3>
+                    <p>We cover both hardware and software aspects thoroughly. Hardware training includes component
+                        identification, circuit tracing, soldering/desoldering, while software training covers
+                        Android/iOS flashing, FRP unlocking, pattern removal, virus removal, and operating system
+                        troubleshooting.</p>
+                </div>
+            </div>
+
+            <!-- Business Startup Support -->
+            <div class="service">
+                <div class="service-text">
+                    <h3>Business Startup Support</h3>
+                    <p>OZZO doesn't just teach repair - we help you start your own business. Our training includes
+                        guidance on shop setup, tool procurement, spare parts sourcing, pricing strategies, marketing
+                        techniques, and customer management to ensure you're ready to launch your mobile repair venture.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="service">
+                <div class="service-text">
+                    <p>Join OZZO Mobile Repair Training and master the skills needed for a successful career in the
+                        growing mobile repair industry. Whether you want to start your own business or join a service
+                        center, our training provides complete knowledge and practical expertise. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="form-group">
+        <a href="carwashapply.html" class="apply-btn">Start Your Mobile Repair Training</a>
+    </div>
+    <div id="popupForm" class="popup-overlay">
+        <div class="popup-content">
+
+            <!-- Heading Across Top -->
+            <div class="popup-title">
+                <h2>Start Your Mobile Repair Training</h2>
+            </div>
+
+            <!-- Flex Row: Image + Form -->
+            <div class="popup-body">
+                <div class="popup-left">
+                    <img src="../FRANCHIES/franches.jpeg" alt="Mobile Repair Training Image">
+                </div>
+
+                <div class="popup-right">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="tel" placeholder="Mobile Number" required>
+                        <input type="email" placeholder="Gmail" required>
+                        <!-- Gender Selection - Select Dropdown -->
+                        <select required>
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <input type="text" placeholder="Qualifications" required>
+                        <input type="text" placeholder="Training Type" required>
+                        <textarea placeholder="Address / Special Request" rows="4"></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <footer>
+        <p>&copy; 2025 OZZO. All Rights Reserved.</p>
+        <p>Powered by <a href="https://www.vspazetechnologies.in/" target="_blank">vspaze technologies</a></p>
+    </footer>
+    <button id="scrollTopBtn" title="Go to top">↑</button>
+    <script src="../CAR-WASHING/wash.js"></script>
+</body>
+
+</html>

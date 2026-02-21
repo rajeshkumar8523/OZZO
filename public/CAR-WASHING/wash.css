@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  background-color: #036fe2;
+  background-color: #000;
   color: white;
   padding: 15px 0;
   position: fixed;
@@ -49,7 +49,7 @@ header {
 }
 
 .nav-links a.active {
-  color: #000000;
+  color: #036fe2;
   /* Highlight color */
   font-weight: bold;
   border-bottom: 2px solid #fff;
@@ -70,32 +70,31 @@ nav a {
 }
 
 nav a:hover {
-  color: #000000;
+  color: #036fe2;
 }
 
-
+/* Base styles - remove conflicting margins */
 .logo-link {
   text-decoration: none;
   color: inherit;
   display: inline-block;
-  margin-left: 25%;
+  /* Remove margin-left: 1%; from here */
 }
 
 .logo-left {
   display: flex;
   align-items: center;
   gap: 10px;
-
+  margin-top: 5%;
 }
 
 .logo-left img {
-  width: 70px;
-  height: 68px;
-  border-radius: 50%;
+  width: 250px;
+  height: 150px;
 }
 
 .site-name {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: bold;
 }
 
@@ -109,13 +108,11 @@ nav a:hover {
 
 .service-content {
   font-size: 16px;
-  margin-left: 20%;
   max-width: 800px;
+  margin: 0 auto 50px auto; /* Centers horizontally and adds bottom margin */
   text-align: center;
   color: #444;
   justify-content: center;
-  margin-bottom: 50px;
-  /* Adds 2 lines of space below the heading */
 }
 
 .service-heading {
@@ -163,7 +160,7 @@ nav a:hover {
   /* Glass blur */
   -webkit-backdrop-filter: blur(10px);
   /* Safari support */
-  border: 2px solid #007BFF;
+  border: 2px solid #007bff;
   /* Blue border */
   box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
   /* Blue glow shadow */
@@ -180,7 +177,7 @@ nav a:hover {
   transition: opacity 0.8s ease-in-out;
   border-radius: 10px;
   /* Optional: smooth image corners */
-  border: 2px solid #007BFF;
+  border: 2px solid #007bff;
   /* Blue border around image */
 }
 
@@ -189,63 +186,73 @@ nav a:hover {
   z-index: 1;
 }
 
-
 .apply-btn {
   display: block;
   /* Makes centering via margin work */
-  background-color: #007BFF;
+  background-color: #007bff;
   color: white;
   margin: 4% auto 0 auto;
   /* Pushes down and centers */
-  width: 200px;
+  width: 320px;
   font-weight: bold;
   text-align: center;
   padding: 16px 36px;
-  border: 6px solid #007BFF;
+  border: 6px solid #fff;
   border-radius: 15px;
   text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(153, 153, 168, 0.941);
   transition: 0.3s ease;
 }
 
 .apply-btn:hover {
   background-color: #fff;
-  color: #007BFF;
+  color: #007bff;
 }
 
+/* Popup Overlay */
 .popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: white;
+  background: #fff;
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
+/* Popup Content */
 .popup-content {
   width: 90%;
-  max-width: 900px;
-  background: rgba(255, 255, 255, 0.25);
+  max-width: 1000px;
+  min-width: 280px; /* Prevent form from becoming too narrow */
+  max-height: 90vh;
+  background: #fff;
   backdrop-filter: blur(15px);
-  border: 2px solid #007BFF;
+  border: 2px solid #007bff;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 123, 255, 0.3);
-  overflow: hidden;
   animation: fadeInUp 0.5s ease;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden; /* Hide horizontal scroll inside popup */
+  overflow-y: auto; /* Enable vertical scrolling inside popup */
+  position: relative;
+  margin: auto;
 }
 
 /* Title styling */
 .popup-title {
   text-align: center;
-  font-size: 28px;
+  font-size: 25px;
   font-family: cursive;
-  color: #007BFF;
+  color: #007bff;
   padding: 20px 0 0 0;
 }
 
@@ -270,7 +277,6 @@ nav a:hover {
   display: block;
   justify-items: center;
   justify-content: center;
-
 }
 
 /* Right side form */
@@ -287,21 +293,76 @@ nav a:hover {
   padding: 10px;
   margin-bottom: 15px;
   width: 90%;
-  border: 2px solid #007BFF;
+  border: 2px solid #007bff;
   border-radius: 8px;
   font-size: 16px;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(3px);
 }
+/* Style the select dropdown to match input fields */
+.popup-right select {
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 96%;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(3px);
+  color: #333;
+}
 
+/* Style the placeholder/default option */
+.popup-right select option {
+  background: white;
+  color: #333;
+  padding: 10px;
+}
+
+.popup-right select option:first-child {
+  color: #999;
+}
+
+/* Hover state */
+.popup-right select:hover {
+  border-color: #0056b3;
+}
+
+/* Focus state */
+.popup-right select:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* Responsive for 768px */
+@media (max-width: 768px) {
+  .popup-right select {
+    width: 90%;
+    padding: 12px;
+    font-size: 15px;
+    background-position: right 12px center;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-right select {
+    padding: 8px;
+    width: 90%;
+    font-size: 13px;
+    margin-bottom: 10px;
+    background-position: right 8px center;
+    background-size: 14px;
+  }
+}
 .popup-right button {
-  background-color: #007BFF;
+  background-color: #007bff;
   color: white;
   margin-left: auto;
   width: 150px;
   font-weight: bold;
   padding: 10px 20px;
-  border: 6px solid #007BFF;
+  border: 6px solid #007bff;
   border-radius: 15px;
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -310,7 +371,7 @@ nav a:hover {
 
 .popup-right button:hover {
   background-color: #fff;
-  color: #007BFF;
+  color: #007bff;
 }
 
 @keyframes fadeInUp {
@@ -325,9 +386,8 @@ nav a:hover {
   }
 }
 
-
 footer {
-  background-color: #036fe2;
+  background-color: #000;
   padding: 10px;
   margin: 0;
   text-align: center;
@@ -345,7 +405,7 @@ footer a {
   bottom: 120px;
   right: 30px;
   z-index: 999;
-  background: linear-gradient(145deg, #007BFF, #0056b3);
+  background: linear-gradient(145deg, #007bff, #0056b3);
   color: white;
   border: none;
   border-radius: 50%;
@@ -364,8 +424,8 @@ footer a {
 
 #scrollTopBtn:hover {
   background: #fff;
-  color: #007BFF;
-  border: 2px solid #007BFF;
+  color: #007bff;
+  border: 2px solid #007bff;
   transform: scale(1.1);
 }
 
@@ -376,7 +436,6 @@ footer a {
 }
 
 @keyframes moveUpDown {
-
   0%,
   100% {
     transform: translateY(0);
@@ -397,17 +456,21 @@ footer a {
   .logo-left {
     display: flex;
     align-items: center;
-    /* ✅ Use center instead of 'left' */
-    justify-content: flex-start;
-    gap: 10px;
-
+    gap: 8px;
   }
 
   .logo-link {
-    margin-left: 0%;
-    margin-right: 50%;
-    /* ✅ Pushes it to the left */
+    margin-left: 0;
+    margin-right: 0; /* Reset all margins */
+    flex-shrink: 0; /* Prevent logo from shrinking */
   }
+
+  .logo-left img {
+    width: 200px; /* Fixed width */
+    height: auto; /* Auto height to maintain aspect ratio */
+    max-width: 100%; /* Prevent overflow */
+  }
+
 
   .menu-icon {
     display: block;
@@ -420,7 +483,7 @@ footer a {
     top: 79px;
     left: 41%;
     width: 60%;
-    background-color: #75a7dd;
+    background-color: #000;
     border-radius: 0 0 20px 20px;
     padding: 5px 5px 25px 2px;
     /* Increased bottom padding */
@@ -428,7 +491,9 @@ footer a {
     align-items: center;
     gap: 4px;
   }
-
+  .nav-links a.active {
+    color: #000;
+  }
   .nav-links.show {
     display: flex;
   }
@@ -438,7 +503,7 @@ footer a {
     padding: 12px 20px;
     width: 80%;
     max-width: 110px;
-     background-color: #036fe2;
+    background-color: #036fe2;
     color: white;
     text-decoration: none;
     border-radius: 12px;
@@ -455,7 +520,6 @@ footer a {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   }
 
-
   .nav-links.show {
     display: flex;
   }
@@ -468,86 +532,90 @@ footer a {
     font-size: 21px;
   }
 
+  /* Mobile-first approach */
   .service-content {
-    margin-left: 9%;
-    /* Reset margin for smaller screens */
-    padding: 0 5px;
-    /* Add padding for smaller screens */
+    text-align: center;
+    padding: 0 20px; /* Equal left/right spacing */
     font-size: 14px;
-    max-width: 400px;
+    margin-left: 0%;
+
+    max-width: 100%;
+    box-sizing: border-box; /* Ensures padding is included in width */
   }
 
   .service-heading {
-    padding: 5px;
+    padding: 5px 20px; /* Equal left/right padding */
     font-size: 16px;
     text-align: center;
-    /* ✅ Centers the heading text */
-    margin-bottom: 20px;
-    margin-top: 30px;
+    margin: 30px auto 20px; /* Center with auto margins */
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .service-text h3 {
     font-size: 15px;
-    font: bold;
+    font-weight: bold; /* Use 'font-weight' instead of 'font' */
     text-align: center;
     color: #000000;
+    padding: 0 20px; /* Equal left/right spacing */
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
   .service-text {
-    padding: 10px;
-    margin: 0 auto;
+    padding: 10px 20px; /* Equal left/right spacing */
+    margin: 4px auto 0;
     text-align: center;
     font-size: 14px;
-    margin-top: 4px;
-
     color: #777;
     font-family: Arial, sans-serif;
+    max-width: 100%;
+    box-sizing: border-box;
+    line-height: 1.5; /* Better readability on mobile */
   }
+  .carousel {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    margin: 0 auto; /* Center horizontally */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 
- .carousel {
-  position: relative;
-  width: 100%;
-  max-width: 300px;
-  height: 200px;
-  margin: 0 auto; /* Center horizontally */
-  display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center;     /* Center content vertically */
-  
-  /* Glassmorphism styles */
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+    /* Glassmorphism styles */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
-  border-radius: 15px;
-  border: 2px solid #007BFF;
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
-  
-  padding: 0 16px; /* Optional: inner padding */
-}
+    border-radius: 15px;
+    border: 2px solid #007bff;
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
 
+    padding: 0 16px; /* Optional: inner padding */
+  }
 
   .apply-btn {
     display: block;
     /* Makes centering via margin work */
-    background-color: #007BFF;
+    background-color: #007bff;
     color: white;
     margin: 4% auto 0 auto;
     /* Pushes down and centers */
-    width: 150px;
+    width: 300px;
     font-weight: bold;
     text-align: center;
     padding: 8px 16px;
-    border: 6px solid #007BFF;
+    border: 6px solid #fff;
     border-radius: 15px;
     font-size: 15px;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(153, 153, 168, 0.941);
     transition: 0.3s ease;
   }
 
   footer {
-    background-color: #036fe2;
+    background-color: #000;
     padding: 5px;
     margin: 0;
     text-align: center;
@@ -556,22 +624,26 @@ footer a {
     color: white;
   }
 
+  /* Popup Content */
   .popup-content {
-    width: 90%;
+    width: 98%;
     max-width: 1000px;
-    height: 90%;
-    background: rgba(255, 255, 255, 0.25);
+    min-width: 280px; /* Prevent form from becoming too narrow */
+    height: 98%;
+    max-height: 90vh;
+    background: #fff;
     backdrop-filter: blur(15px);
-    border: 2px solid #007BFF;
+    border: 2px solid #007bff;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 123, 255, 0.3);
-    overflow: hidden;
     animation: fadeInUp 0.5s ease;
     display: flex;
     flex-direction: column;
-    font-size: 15px;
+    overflow-x: hidden; /* Hide horizontal scroll inside popup */
+    overflow-y: auto; /* Enable vertical scrolling inside popup */
+    position: relative;
+    margin: auto;
   }
-
   .popup-body {
     flex-direction: column;
   }
@@ -592,13 +664,14 @@ footer a {
 
   .popup-right {
     order: 2;
-    margin-left: 52px;
+    margin-left: 102px;
   }
 
   .popup-left img {
-    width: 100%;
-    height: auto;
+    width: 70%;
+    height: 150px;
     margin-top: 0%;
+    margin-bottom: 10px;
   }
 
   .popup-title {
@@ -607,36 +680,33 @@ footer a {
 
   .popup-right input,
   .popup-right textarea {
-    width: 80%;
+    width: 90%;
+
     font-size: 14px;
   }
+  .popup-right select {
+    padding: 10px;
 
+    width: 90%;
+  }
   .popup-right button {
-
     width: 50%;
     max-width: 150px;
     margin-left: 60px;
 
     padding: 8px 16px;
-
-  }
-
-  .popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background: white;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
   }
 }
 
 @media (max-width: 480px) {
+ 
+    .logo-left {
+    gap: 5px; /* Reduce gap on very small screens */
+  }
+
+  .logo-left img {
+    width: 140px; /* Even smaller for very small screens */
+  }
   .service-heading {
     font-size: 20px;
     /* Smaller font size for headings */
@@ -662,9 +732,8 @@ footer a {
 /* Responsive for phones and small devices */
 @media (max-width: 600px) {
   .logo-left img {
-    width: 50px;
-    height: 50px;
-
+    width: 180px;
+    
   }
 
   .site-name .blink {
@@ -674,7 +743,7 @@ footer a {
   .site-name .bowl {
     font-size: 21px;
   }
-    #scrollTopBtn {
+  #scrollTopBtn {
     width: 45px;
     height: 45px;
     font-size: 24px;
@@ -682,5 +751,94 @@ footer a {
     bottom: 85px;
     right: 10px;
     box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+  }
+}
+/* 768px Responsive Styles - Tablet Portrait */
+@media (max-width: 768px) {
+  .logo-left img {
+    width: 180px; /* Smaller fixed width for mobile */
+    height: auto;
+  }
+
+  .logo-link {
+    margin-right: 0; /* Ensure no right margin */
+     margin-left: -13px;
+  }
+  .apply-btn {
+    width: 200px;
+  }
+
+  /* Popup Content */
+  .popup-content {
+    width: 98%;
+    max-width: 1000px;
+    min-width: 280px; /* Prevent form from becoming too narrow */
+    max-height: 90vh;
+    height: 98%;
+    background: #fff;
+    backdrop-filter: blur(15px);
+    border: 2px solid #007bff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 123, 255, 0.3);
+    animation: fadeInUp 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* Hide horizontal scroll inside popup */
+    overflow-y: auto; /* Enable vertical scrolling inside popup */
+    position: relative;
+    margin: auto;
+  }
+
+  .popup-body {
+    flex-direction: column;
+  }
+
+  .popup-left,
+  .popup-right {
+    width: 80%;
+    margin: 0 auto; /* Center the form */
+    font-size: 15px;
+    padding: 2px 4px;
+  }
+
+  /* Show image first */
+  .popup-left {
+    order: 1;
+    margin-left: 30px;
+  }
+
+  .popup-right {
+    order: 2;
+    margin: 0 auto; /* Center the form */
+  }
+
+  .popup-left img {
+    width: 100%;
+    height: 130px;
+    margin-top: 0%;
+    margin-bottom: 15px;
+  }
+
+  .popup-title {
+    font-size: 16px;
+    margin-top: -3%;
+  }
+
+  .popup-right input,
+  .popup-right textarea {
+    width: 90%;
+    font-size: 14px;
+  }
+  .popup-right select {
+    padding: 10px;
+
+    width: 95%;
+  }
+  .popup-right button {
+    width: 50%;
+    max-width: 150px;
+    margin-left: 0px;
+
+    padding: 8px 16px;
   }
 }
